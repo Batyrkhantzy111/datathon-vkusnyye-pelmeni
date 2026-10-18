@@ -3,6 +3,12 @@
 	request_body {
 		max_size 210MB
 	}
+	# Path aliases for clients that join the API base URL and the spec paths differently: a base that already ends
+	# in /api/v1 (-> /api/v1/api/v1/...) or a bare host with endpoint names only (-> /analyze, /jobs/...).
+	@nested path /api/v1/api/v1/*
+	uri @nested strip_prefix /api/v1
+	@bare path /analyze /jobs/*
+	rewrite @bare /api/v1{path}
 	reverse_proxy 127.0.0.1:8000
 }
 
