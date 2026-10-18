@@ -1,0 +1,23 @@
+[Unit]
+Description=ForteBank cash-discipline video analyzer API (FastAPI/uvicorn)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=shadeform
+Group=shadeform
+WorkingDirectory=/home/shadeform/forte
+Environment=PYTHONPATH=/home/shadeform/forte
+Environment=PYTHONUNBUFFERED=1
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+Environment=YOLO_OFFLINE=1
+Environment=YOLO_AUTOINSTALL=0
+Environment=FORTE_WORKERS=3
+ExecStart=/home/shadeform/det-venv/bin/python -m uvicorn service.app:app --host 127.0.0.1 --port 8000 --timeout-keep-alive 30
+Restart=always
+RestartSec=3
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

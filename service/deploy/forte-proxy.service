@@ -1,0 +1,22 @@
+[Unit]
+Description=ForteBank public reverse proxy (Caddy: HTTPS sslip.io + HTTP :80 -> 127.0.0.1:8000)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=shadeform
+Group=shadeform
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+StateDirectory=forte-proxy
+Environment=XDG_DATA_HOME=/var/lib/forte-proxy
+Environment=XDG_CONFIG_HOME=/var/lib/forte-proxy
+ExecStart=/usr/local/bin/caddy run --config /home/shadeform/forte/service/deploy/Caddyfile --adapter caddyfile
+ExecReload=/usr/local/bin/caddy reload --config /home/shadeform/forte/service/deploy/Caddyfile --adapter caddyfile --force
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

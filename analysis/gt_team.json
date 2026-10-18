@@ -1,0 +1,357 @@
+{
+ "X-01": {
+  "verdict": "violation",
+  "t": 22.0,
+  "types": [
+   "T11"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-02": {
+  "verdict": "violation",
+  "t": 10.0,
+  "types": [
+   "T1"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-03": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-04": {
+  "verdict": "violation",
+  "t": 57.0,
+  "types": [
+   "T2"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-05": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-08": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-10": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-11": {
+  "verdict": "violation",
+  "t": 18.0,
+  "types": [
+   "T6"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-12": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-13": {
+  "verdict": "violation",
+  "t": 47.0,
+  "types": [
+   "T13",
+   "T10"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-14": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-15": {
+  "verdict": "violation",
+  "t": 15.0,
+  "types": [
+   "T3"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-16": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-17": {
+  "verdict": "violation",
+  "t": 7.0,
+  "types": [
+   "T1"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-18": {
+  "verdict": "violation",
+  "t": 20.0,
+  "types": [
+   "T9"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-19": {
+  "verdict": "violation",
+  "t": 8.0,
+  "types": [
+   "T1"
+  ],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-20": {
+  "verdict": "violation",
+  "t": 5.0,
+  "types": [
+   "T4"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-21": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-22": {
+  "verdict": "violation",
+  "t": 14.0,
+  "types": [
+   "T5"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-23": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-24": {
+  "verdict": "violation",
+  "t": 8.0,
+  "types": [
+   "T7"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-25": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-26": {
+  "verdict": "violation",
+  "t": 9.0,
+  "types": [
+   "T3",
+   "T2"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-27": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-28": {
+  "verdict": "violation",
+  "t": 7.0,
+  "types": [
+   "T6"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-29": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-30": {
+  "verdict": "violation",
+  "t": 13.0,
+  "types": [
+   "T8"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-31": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-32": {
+  "verdict": "violation",
+  "t": 5.0,
+  "types": [
+   "T8"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-33": {
+  "verdict": "violation",
+  "t": 6.0,
+  "types": [
+   "T8"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-34": {
+  "verdict": "violation",
+  "t": 13.0,
+  "types": [
+   "T1",
+   "T10"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-35": {
+  "verdict": "violation",
+  "t": null,
+  "types": [
+   "T1",
+   "T10"
+  ],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-37": {
+  "verdict": "violation",
+  "t": null,
+  "types": [
+   "T1",
+   "T10"
+  ],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-38": {
+  "verdict": "violation",
+  "t": 33.0,
+  "types": [
+   "T2",
+   "T1",
+   "T10"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-39": {
+  "verdict": "violation",
+  "t": null,
+  "types": [
+   "T1",
+   "T10"
+  ],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-40": {
+  "verdict": "violation",
+  "t": 17.0,
+  "types": [
+   "T12"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-43": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-44": {
+  "verdict": "violation",
+  "t": 16.0,
+  "types": [
+   "T13"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-45": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": null
+ },
+ "X-46": {
+  "verdict": "violation",
+  "t": 11.0,
+  "types": [
+   "T12"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": null
+ },
+ "X-47": {
+  "verdict": "violation",
+  "t": 68.0,
+  "types": [
+   "T2",
+   "T13"
+  ],
+  "org_verdict": "violation",
+  "duplicate_of": "X-04"
+ },
+ "X-48": {
+  "verdict": "no_violation",
+  "t": null,
+  "types": [],
+  "org_verdict": "no_violation",
+  "duplicate_of": "X-05"
+ }
+}

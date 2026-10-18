@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контроль кассовой дисциплины — анализ видео</title>
+<link rel="stylesheet" href="/static/style.css?v=6">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/" id="home">
+    <span class="logo" aria-hidden="true">₸</span>
+    <span><b>Контроль кассовой дисциплины</b><small>анализ видеозаписей кассы</small></span>
+  </a>
+  <nav>
+    <button type="button" class="ghost" id="nav-new">Новая проверка</button>
+    <button type="button" class="ghost" id="nav-types">Типы нарушений</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Upload -->
+  <section id="view-upload">
+    <div class="grid-upload">
+      <div class="card">
+        <h2>Проверка видеозаписи</h2>
+        <p class="muted">Загрузите запись камеры над кассой. Сервис найдёт визуальные признаки возможных нарушений и для каждого покажет таймкод, кадры и норму законодательства РК.</p>
+        <label id="drop" for="file" tabindex="0">
+          <input id="file" type="file" accept=".mov,.mp4,video/quicktime,video/mp4" hidden>
+          <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l5 5h-3v6h-4V8H7l5-5zm-7 14h14v2H5v-2z"/></svg>
+          <span class="big">Перетащите видео сюда</span>
+          <span class="muted">или нажмите, чтобы выбрать файл · .mov или .mp4 · до 200 МБ</span>
+        </label>
+        <div id="upload-error" class="alert error" hidden></div>
+        <ul class="facts">
+          <li>Обработка локальная: облачные AI-сервисы не используются</li>
+          <li>Лица не распознаются, анализ только визуальный</li>
+          <li>Ход анализа виден на экране; результат можно открыть позже по ссылке</li>
+        </ul>
+      </div>
+      <aside class="card" id="recent-card">
+        <div class="row"><h3>Недавние проверки</h3><button type="button" class="link" id="recent-clear" hidden>Очистить</button></div>
+        <p class="muted small">Хранятся только в этом браузере.</p>
+        <ul id="recent" class="recent"></ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Processing / error -->
+  <section id="view-status" hidden>
+    <div class="card status-card">
+      <div class="row">
+        <div>
+          <div class="muted small">Файл</div>
+          <b id="st-name"></b>
+        </div>
+        <div class="right">
+          <div class="muted small">Прошло</div>
+          <b id="st-elapsed">0 с</b>
+        </div>
+      </div>
+      <div class="bar"><div id="st-bar"></div></div>
+      <div class="row">
+        <span id="st-stage">Загрузка файла…</span>
+        <span id="st-pct" class="muted">0%</span>
+      </div>
+      <div id="st-error" class="alert error" hidden></div>
+      <div class="actions" id="st-actions" hidden><button type="button" id="st-retry">Загрузить другое видео</button></div>
+    </div>
+  </section>
+
+  <!-- Result -->
+  <section id="view-result" hidden>
+    <div id="verdict" class="verdict"></div>
+    <div class="card summary">
+      <dl>
+        <div><dt>Видео</dt><dd id="r-name"></dd></div>
+        <div><dt>Длительность</dt><dd id="r-dur"></dd></div>
+        <div><dt>Время обработки</dt><dd id="r-proc"></dd></div>
+        <div><dt>Нарушений</dt><dd id="r-count"></dd></div>
+      </dl>
+      <div class="models"><span class="muted small">Модели:</span> <span id="r-models"></span></div>
+      <p class="note">Результат — подсказка для проверки человеком, а не окончательное заключение.</p>
+    </div>
+    <div class="layout">
+      <div class="player card">
+        <video id="video" controls playsinline preload="metadata"></video>
+        <div class="timeline-wrap">
+          <div class="row small muted"><span>Шкала событий</span><span id="tl-time">00:00.0 / 00:00.0</span></div>
+          <div id="timeline" class="timeline" title="Нажмите, чтобы перейти к моменту">
+            <div id="tl-played" class="tl-played"></div>
+            <div id="tl-head" class="tl-head"></div>
+          </div>
+          <div id="tl-legend" class="legend"></div>
+        </div>
+        <details class="tech small" id="tech" hidden><summary>Технические детали</summary><div id="tech-body"></div></details>
+      </div>
+      <div>
+        <div id="violations"></div>
+        <div class="actions"><button type="button" id="r-new">Проверить другое видео</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Кадр-доказательство">
+  <button type="button" class="lb-close" aria-label="Закрыть">×</button>
+  <button type="button" class="lb-nav lb-prev" aria-label="Предыдущий кадр">‹</button>
+  <figure><img alt="Кадр-доказательство"><figcaption></figcaption></figure>
+  <button type="button" class="lb-nav lb-next" aria-label="Следующий кадр">›</button>
+</div>
+
+<!-- Types -->
+<dialog id="types-dlg">
+  <div class="dlg-head">
+    <h2>Типы нарушений</h2>
+    <button type="button" class="ghost dark" id="types-close" aria-label="Закрыть">×</button>
+  </div>
+  <p class="muted small">Что ищет сервис и на какие нормы РК ссылается. «Прямая» — норма прямо требует или запрещает это действие; «косвенная» — вывод по аналогии или из общего требования.</p>
+  <div id="types-body">Загрузка…</div>
+  <div id="types-sources"></div>
+</dialog>
+
+<footer class="muted small">ForteBank Datathon 26 · Анализ выполняется локально на сервере команды · Распознавание лиц не используется</footer>
+<script src="/static/app.js?v=6"></script>
+</body>
+</html>

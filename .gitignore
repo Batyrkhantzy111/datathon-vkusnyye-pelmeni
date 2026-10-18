@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+jobs/
+api_key.txt
+public_url.txt
+*.mov
+*.mp4
+.venv*/

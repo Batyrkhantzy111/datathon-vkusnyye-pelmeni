@@ -1,0 +1,15 @@
+# Stable public endpoint for forte-api (127.0.0.1:8000). Run by forte-proxy.service.
+(api) {
+	request_body {
+		max_size 210MB
+	}
+	reverse_proxy 127.0.0.1:8000
+}
+
+216-81-248-201.sslip.io {
+	import api
+}
+
+http://216.81.248.201 {
+	import api
+}

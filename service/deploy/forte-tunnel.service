@@ -1,0 +1,14 @@
+[Unit]
+Description=Cloudflare quick tunnel to forte-api (public URL in ~/forte/service/public_url.txt)
+After=network-online.target forte-api.service
+Wants=network-online.target
+
+[Service]
+User=shadeform
+Group=shadeform
+ExecStart=/bin/bash /home/shadeform/forte/service/deploy/tunnel.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
