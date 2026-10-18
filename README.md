@@ -56,7 +56,7 @@ curl -H "X-API-Key: $KEY" "$URL/api/v1/jobs/99c7837d0400"
 
 ## Типы нарушений
 
-Сервис распознаёт 12 типов. Для каждого есть пункт нормы РК с дословной цитатой; ссылки на adilet.zan.kz проверены. Подробно — [docs/TYPES.md](docs/TYPES.md) и [docs/NORMS.md](docs/NORMS.md).
+Сервис распознаёт 13 типов, T1–T13. Для каждого есть пункт нормы РК с дословной цитатой, ссылки на adilet.zan.kz проверены. Подробно — [docs/TYPES.md](docs/TYPES.md) и [docs/NORMS.md](docs/NORMS.md).
 
 | Код | Нарушение |
 |---|---|
